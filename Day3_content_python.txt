@@ -1,0 +1,449 @@
+#LISTS IN PYTHON:
+
+Arrays can store elements of same data type only whereas a list a can store elements of different data types.A list is an advanced array to store elements.
+  ex: a={1,2,3}
+      a={1.2,2.3}
+List can have different data types
+  ex:  l=[1,2.4,3,5,"deepu"]
+
+#INDEXING IN PYTHON:
+
+>>>l=[1,2.4,3,5,"deepu"]
+>>>l
+[1, 2.4, 3, 5, 'deepu']
+>>>l[2]
+3
+>>>l[0]
+1
+
+#SLICING IN PYTHON: 
+
+>>>l[2:3]
+[3]
+>>>l[2:5]
+[3, 5, 'deepu']
+>>>l[0:]
+[1, 2.4, 3, 5, 'deepu']
+>>>l[ : ]
+[1, 2.4, 3, 5, 'deepu']
+
+#NEGATIVE SLICING:
+
+>>>l[-3]
+3
+>>>l[-2:0]
+[]
+>>>l[-4:-1]
+[2.4, 3, 5]
+>>>l[-2:1]     #prints empty list bcoz opposite direction is not supported in lists
+[]
+>>>l[-5:4]
+[1, 2.4, 3, 5]
+>>>l[ ::-1]        #start:end:step since step is -1 it prints from last
+['deepu', 5, 3, 2.4, 1]
+>>>l[::-2]         #since step count is -2 .it starts from last and prints elements with differnce of 2
+['deepu', 3, 1]
+>>>l[2:-1]
+[3, 5]
+>>>l[2:-4]
+[]
+>>>l[::2]         #since step count is 2 .it starts from beginning and prints elements with diff of 2
+[1, 3, 'deepu']
+
+#APPEND FUNCTION:
+ 
+append() is used to add one element at the end of the list.
+hence lists are ordered.
+
+>>>l.append(9)
+>>>l
+[1, 2.4, 3, 5, 'deepu', 9]
+
+
+#EXTEND FUNCTION:
+
+extend() is used to add more than one element to the existing list or new list at the end of the list.
+
+>>>l.extend(["rani",60])
+>>>l
+[1, 2.4, 3, 5, 'deepu', 9, 'rani', 60]
+
+
+#INSERT FUNCTION:
+
+insert() is used to add element at required index position.
+list.insert(index position,element)
+
+>>>l.insert(3,"tri")
+>>>l
+[1, 2.4, 3, 'tri', 5, 'deepu', 9, 'rani', 60]
+
+>>>l.insert(-2,"tubu")
+>>>l
+[1, 2.4, 3, 'tri', 5, 'deepu', 9, 'tubu', 'rani', 60]    #prints a element ahead
+
+
+#REMOVE FUNCTION:
+
+remove() is used to remove a particular value
+In this we give value to be removed
+
+>>>l.remove(60)
+>>>l
+[1, 2.4, 3, 'tri', 5, 'deepu', 9, 'tubu', 'rani']
+
+>>>l.remove("tubu","rani")
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    l.remove("tubu","rani")
+TypeError: list.remove() takes exactly one argument (2 given)
+
+
+#POP FUNCTION:
+
+pop() is used to remove a element at particular index
+In this we give index but not value
+
+>>>l.pop(3)
+'tri'
+>>>l
+[1, 2.4, 3, 5, 'deepu', 9, 'tubu', 'rani']
+
+
+#COUNT FUNCTION:
+
+It counts the number of times an element appears in the list.
+
+>>>l.count(5)
+1
+
+
+#INDEX FUNCTION:
+
+It gives index of specific value
+
+>>>l.index(3)
+2
+>>>l.index("rani")
+7
+
+
+#SORT FUNCTION:
+
+It sorts in ascending order.but if list contains different datatypes it is not possible.
+
+>>>l.sort()
+Traceback (most recent call last):
+  File "<pyshell#38>", line 1, in <module>
+    l.sort()
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+
+#LENGTH FUNCTION(LEN):
+
+It returns length of the list
+
+>>>len(l)
+8
+
+
+#REVERSE FUNCTION:
+
+It is used to reverse the list
+
+>>>l.reverse()
+>>>l
+['rani', 'tubu', 9, 'deepu', 5, 3, 2.4, 1]
+
+
+#COPY FUNCTION:
+
+It is used to copy elements in another list
+
+>>>b=l.copy()
+>>>b
+['rani', 'tubu', 9, 'deepu', 5, 3, 2.4, 1]
+>>>l
+['rani', 'tubu', 9, 'deepu', 5, 3, 2.4, 1]
+
+
+#CLEAR FUNCTION:
+
+It is used to clear the entire list
+
+>>>b.clear()
+>>>b
+[]
+
+
+#LIST COMPREHENSIONS:
+creates a list from existing lists
+>>>l=[a for a in "GOOD AFTERNOON"]
+>>>l
+['G', 'O', 'O', 'D', ' ', 'A', 'F', 'T', 'E', 'R', 'N', 'O', 'O', 'N']
+
+l=["hyd","vizag","vijaywada","ongole"]
+city=[]
+for i in l:
+    if "v" in i:
+        city.append(i)
+print(city)
+output: ['vizag','vijayawada']
+
+#another program
+l=[2**a for a in range(2,5)]
+print(l)
+output:[4,8,16]
+
+#another program
+l1=[1,2,3,4,5,6]
+l2=[a for a in l1 if(a<4)]
+print(l2)
+output:[1,2,3]
+
+#SETS
+1.unordered
+2.duplicates are not allowed
+3.not indexed
+4.Mutable
+>>>s={1,2,3,4}
+>>>s
+{1, 2, 3, 4}
+>>>type(s)
+<class 'set'>
+>>>s={1,2,3,1,1}
+>>>s
+{1, 2, 3}
+
+FUNCTIONS IN SET:
+
+1.add(): used to add an element at random position
+>>>s.add(10)
+>>>s
+{10, 1, 2, 3}
+
+2.update(): used to add more than one element at random positions
+>>>s={1,2.3,4.5,"rani"}
+>>>s.update([11,44,33])
+>>>s
+{1, 2.3, 33, 4.5, 11, 44, 'rani'}
+
+3.remove(): used to remove a element.It throws an error if we try to remove an element which is not present.
+>>>s.remove(44)
+>>>s
+{1, 2.3, 33, 4.5, 11, 'rani'}
+>>>s.remove(99)
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    s.remove(99)
+KeyError: 99
+
+4.discard(): used to remove a element.It doesnot throw an error if we try to remove an element which is not present.
+>>>s.discard(4.5)
+>>>s
+{1, 2.3, 33, 11, 'rani'}
+>>>s.discard(99)
+>>>s
+{1, 2.3, 33, 11, 'rani'}
+
+MATHEMATICAL OPERATIONS IN SETS:
+
+1.union: represented by | or s1.union(s2)
+>>>s1={1,2,3}
+>>>s2={1,2,3,4,5}
+>>>s1|s2
+{1, 2, 3, 4, 5}
+
+2.intersection: represented by & or s1.intersection(s2)
+>>>s1&s2
+{1, 2, 3}
+
+3.difference:
+>>>s1-s2
+set()
+>>>s2-s1
+{4, 5}
+
+4.issuperset():
+>>>s1.issuperset(s2)
+False
+>>>s2.issuperset(s1)
+True
+
+5.symmetric_difference():
+>>>s1^s2
+{4, 5, 6}
+>>>s1.symmetric_difference(s2)
+{4, 5, 6}
+
+
+#TUPLES
+1.ordered
+2.unchangeble
+3.cannot add or remove items
+4.duplicates are allowed
+
+>>>t=(1,2,3,4.5,"rani")
+>>>t
+(1, 2, 3, 4.5, 'rani')
+>>>type(t)
+<class 'tuple'>
+>>>t=(1,2,3,1,1)
+>>>t
+(1, 2, 3, 1, 1)
+
+#FUNCTIONS IN TUPLE:
+
+1.count():
+>>>t.count(1)
+3
+
+2.index:
+>>>t[0]
+1
+>>>t.index(3)
+2
+>>>t.index(1)
+0
+
+#LIST TO TUPLE:
+>>>l=[1,2,3]
+>>>t=tuple(l)
+>>>t
+(1, 2, 3)
+
+#TUPLE TO LIST:
+>>>t=(1,2,3)
+>>>l=list(t)
+>>>l
+[1, 2, 3]
+
+#LIST TO SET:
+>>>l=[1,2,3]
+>>>s=set(l)
+>>>s
+{1, 2, 3}
+
+#NESTED TUPLES:
+t1=(1,2,3)
+t2=(10,20)
+t3=(t1,t2)
+t3
+((1, 2, 3), (10, 20))
+
+#DICTIONARY
+1.contains key and values
+2.unique values only
+3.changeble
+
+#FUNCTIONS IN DICTIONARY:
+
+1.creation:
+>>>dict={'1':'a','2':'b'}
+>>>dict
+{'1': 'a', '2': 'b'}
+>>>type(dict)
+<class 'dict'>
+
+>>>dict={'a':'apple','b':'ball'}
+>>>dict
+{'a': 'apple', 'b': 'ball'}
+
+2.extracting keys and values
+>>>dict={'1':'a','2':'b'}
+>>>dict
+{'1': 'a', '2': 'b'}
+>>>dict.keys()                                                     #to get keys
+dict_keys(['1', '2'])
+>>>dict.values()                                                  #to get values
+dict_values(['a', 'b']) 
+>>>dict.items()                                                   #to get keys and values
+dict_items([('1', 'a'), ('2', 'b')])
+
+3.get function(): 
+>>>dict={'a':'apple','b':'ball'}
+>>>dict.get('a')
+'apple'
+
+#another method: without using get function
+>>>dict['a']
+'apple'
+>>>dict['b']
+'ball'
+
+4.update(): used to add one or more items
+>>>dict.update({'c':'cat','d':'dog'})
+>>>dict
+{'a': 'apple', 'b': 'ball', 'c': 'cat', 'd': 'dog'}
+
+5.pop(): fetch and remove item
+>>>dict.pop('d')
+'dog'
+
+6.popitem():fetch and remove recently added item
+>>>dict.popitem()
+('c', 'cat')
+
+7.setdefault(): if the key is not in dict then it will be added orelse no change will be done'
+#type1: new value is appended .both key and value are given
+>>>dict={'a':'apple','b':'ball','c':'cat'}
+>>>dict.setdefault('d','dog')
+'dog'
+>>>dict
+{'a': 'apple', 'b': 'ball', 'c': 'cat', 'd': 'dog'}
+
+#type2: already present key and value are given.so no changes
+>>>dict.setdefault('a','apple')
+'apple'
+>>>dict
+{'a': 'apple', 'b': 'ball', 'c': 'cat', 'd': 'dog'}
+
+#type3: only key is given which is already present
+>>>dict.setdefault('a')
+'apple'
+>>>dict
+{'a': 'apple', 'b': 'ball', 'c': 'cat', 'd': 'dog'}
+
+#type4: only key is given which is not present .so value is taken as none
+>>>dict.setdefault('e')
+>>>dict
+{'a': 'apple', 'b': 'ball', 'c': 'cat', 'd': 'dog', 'e': None}
+
+8.Creating dictionaries from list,tuple,range etc
+>>>l=['hi','hello']
+>>>dict.fromkeys(l)
+{'hi': None, 'hello': None}
+
+>>>l=['hi','hello']
+>>>dict.fromkeys(l,10)
+{'hi': 10, 'hello': 10}
+
+>>>{}.fromkeys(l,100)
+{'hi': 100, 'hello': 100}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+ 
+
+     
