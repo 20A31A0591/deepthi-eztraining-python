@@ -1,0 +1,120 @@
+#Dictionary Comprehension = creating a dictionary from an existing dictionary
+>>>d={n:n*n for n in range(1,5)} // n:n*n ==>represents key:value
+>>>d
+{1: 1, 2: 4, 3: 9, 4: 16}
+
+STRINGS
+
+>>>n="hi i'm "tuba""
+SyntaxError: invalid syntax
+>>>n="hi i'm"
+>>>n
+"hi i'm"
+>>>n='hi i"m"tuba"'
+>>>n
+'hi i"m"tuba"'
+>>>n="hii\'m
+SyntaxError: incomplete input
+>>>n="hii\'m"
+>>>n
+"hii'm"
+>>>n='hii\'m "tuba"'
+>>>n
+'hii\'m "tuba"'
+
+CONCATENATE     S1+S2
+>>>s1="hello"
+>>>s2="hi"
+>>>s1+s2
+'hellohi'
+DUPLICATION    S1*number
+>>>s1*2
+'hellohello'                       
+
+FUNCTIONS
+
+s.upper()
+s.lower() or s.casefold()
+s.capitalize
+s.replace('h','a') : it replaces every 'h' in string with 'a'
+s.strip() : it removes blank or extra spaces from beginning and end of the string
+s.split() s.split(",") s.split(".") s.split('a')
+s.center(31,'*') s.center(width,fillchar) : will provide 31 spaces for the string and 
+                                   fix the string in the center and fill the empty spaces with the fillchar given
+s.count('a')
+s.count('a',start_index,end_index / len(s))    example: s.count('a',0,len(s))
+s.endswith('a',0,len(s)) - checks string endswith a or not
+s.find('a',0,len(s)) - finds a and returns the index of its first occurrence
+s.index('a',7,len(s)) - finds a starts from 7 goes till end
+*** For a value not present in a string:
+               FIND returns "-1" 
+               INDEX gives an error
+s.islower()
+s.isupper()
+s.istitle() // starting letter of string capital
+max(s) - returns greater char like a>b>c....>z
+min(s) - space is lesser then a<b<c...
+s.startswith('hello',0,len(s))
+s.rfind('a',0,len(s)) - from reverse the searching starts gives the first occurrence from last
+
+MUTABLE VS IMMUTABLE
+
+mutable - changeable 
+              - list,set,dictionary
+
+immutable - unchangeable
+                 - int,float,string,tuple,bool
+
+>>>r=200
+>>>r
+200
+>>>id(r)
+140734817106952  // even if the value of a variable changes the address of every value is different
+>>>r=300               // and the address of the old value remains constant or same for that value
+>>>r
+300
+>>>id(r)
+1477085232624
+
+>>>l=[1,2,3]
+>>>id(l)
+1477090911360       //the address of the list remains same even if the contents of the list change
+>>>l.append(4)
+>>>l
+[1, 2, 3, 4]
+>>>id(l)
+1477090911360
+>>>l.clear()
+>>>l
+[]
+>>>id(l)
+1477090911360
+
+
+MATH MODULE
+
+math.ceil()
+math.floor()
+math.sqrt()
+math.factorial()
+math.pow()
+math.fmod()
+divmod(a,b)
+
+>>>import math
+>>>math.ceil(12.5)
+13
+>>>math.floor(12.5)
+12
+>>>math.sqrt(144)
+12.0
+>>>math.factorial(4)
+24
+>>>math.pow(2,3)
+8.0
+>>>math.fmod(10,3)   // gives remainder
+1.0
+>>>divmod(10,3)   // gives quotient and remainder
+(3, 1)
+>>>divmod(9,3)
+(3, 0)
