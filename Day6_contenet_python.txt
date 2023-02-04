@@ -1,0 +1,38 @@
+EXCEPTION HANDLING
+
+When there is an exception the developer does not want interuption ot disturbance in the program flow to acieve this we are using exception handling
+try block
+except block
+finally block
+
+ 3 types of error :
+logical error : error on logic .
+syntax error: error in syntax like paranthesis etc
+run time error:  error in displaying output ex: infinite loop
+
+OOPS CONCEPT:
+Object  Oriented Programming Structure   is an efficient language which is used in java and python
+For multiple reasons we use OOPS concept for example Code reusability,Data security ,Hiding data
+CLASS:
+It is a blue print.
+Ex: birds,laptops
+
+OBJECT:
+Is is a thing created based on class.
+NOTE: One class can have multiple objects.
+Ex: Birds is a class. Objects for Bird are Types of birds like peacock,parrot Etc.
+      Laptop is a  class.Objects are Dell ,Apple,HP etc
+
+CONSTRUCTOR:  __init__ is called a constructor
+class Employee():
+    def __init__(self,name,id):
+        self.name=name
+        self.id=id
+    def display(self):
+        print(self.name,self.id)
+emp1=Employee("joh",13)
+emp2=Employee("janaki",12)
+emp1.display()
+emp2.display()
+
+
